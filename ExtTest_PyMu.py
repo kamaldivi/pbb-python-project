@@ -1,6 +1,7 @@
 import fitz  # PyMuPDF
 import os
 from typing import Optional, List, Dict
+from unidecode import unidecode
 
 # Sanskrit text processing
 try:
@@ -30,7 +31,8 @@ class SanskritPDFReader:
         self.doc = None
         self.total_pages = 0
         self.sanskrit_char_map = {
-            'ß': 'ṣ',  # Specific case mentioned
+            'ß': 'ṣ', 
+            'å': 'ā', # Specific case mentioned
             'à': 'ā',
             'á': 'ā', 
             'ñ': 'ñ',
